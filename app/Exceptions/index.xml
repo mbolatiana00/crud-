@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Entities" id="C0iZHZgxABxYmfLG6kgL">
+    <mxGraphModel dx="1222" dy="681" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- User -->
+        <mxCell id="2" value="User&#xa;- id : int&#xa;- nom : string&#xa;- email : string&#xa;- password : string&#xa;- role : string" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="200" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- Product -->
+        <mxCell id="3" value="Product&#xa;- id : int&#xa;- name : string&#xa;- description : string&#xa;- price : float&#xa;- category : string" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="60" width="200" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- Commande -->
+        <mxCell id="4" value="Commande&#xa;- id : int&#xa;- user_id : int&#xa;- date : datetime&#xa;- statut : string&#xa;- mode : string" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="260" width="200" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- Panier -->
+        <mxCell id="5" value="Panier&#xa;- id : int&#xa;- user_id : int&#xa;- product_id : int&#xa;- quantity : int" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="260" width="200" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- Paiement -->
+        <mxCell id="6" value="Paiement&#xa;- id : int&#xa;- commande_id : int&#xa;- amount : float&#xa;- payment_method : string&#xa;- payment_date : datetime" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="260" width="200" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- Notification -->
+        <mxCell id="7" value="Notification&#xa;- id : int&#xa;- user_id : int&#xa;- message : text&#xa;- is_read : bool&#xa;- created_at : datetime" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="60" width="200" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- Relations -->
+        <mxCell id="8" style="endArrow=block;html=1;" edge="1" parent="1" source="2" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" style="endArrow=block;html=1;" edge="1" parent="1" source="2" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" style="endArrow=block;html=1;" edge="1" parent="1" source="4" target="6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" style="endArrow=block;html=1;" edge="1" parent="1" source="2" target="7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" style="endArrow=block;html=1;" edge="1" parent="1" source="5" target="3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
